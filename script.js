@@ -13,7 +13,9 @@ function toggleMenu(){
 /*--------------------------*/
 let progress = document.getElementById('scrollline');
 let totalHeight = document.body.scrollHeight - window.innerHeight;
-
+/*---*/
+let a = 77;
+let b = 88;
 /*--------------------------*/
     window.onscroll = () => {
 let progressHeight = (window.pageYOffset / totalHeight)*100;
@@ -211,13 +213,45 @@ let tmr;
     onett = document.getElementById('tittr')
     twott = document.getElementById('tittrr')
     console.dir(onett)
-    onett.oninput = ()=>{ console.dir(onett)}
     btnpass.onclick = ()=>{
-        console.dir(onett)
-        if( onett.value == '1234'  && twott.value == '1234' ){
+        if( onett.value == a  && twott.value == b ){
             document.querySelector('.contin').style.display = 'none';
             document.querySelector('.cont').style.display = 'none';
             onett.remove();
             twott.remove();
         }
     }
+    function zizibox(){
+        const colorss = ['#7B68EE','#7FFFD4','#FFA07A','#FF1493','#FFFF00','#FF0000'];
+        const section = document.querySelector('.cont');
+        const square = document.createElement('span');
+        square.classList.add('sp');
+        let lastsya = document.getElementById('tittrr').value;
+        console.log(lastsya.slice(-1)); 
+        square.innerHTML = lastsya.slice(-1);
+        let size = Math.random()*50;
+        let randnom = Math.random();
+        square.style.width =  240+size+'px';
+        square.style.height = 240+size+'px';
+        square.style.fontSize = 240+size+'px';
+        
+        /*let toppadding = Math.floor((((innerHeight/3)*2)+randnom*(innerHeight/3)));*/
+        let toppadding = 0;
+       /* let topPadMinThrePer = toppadding - (toppadding*30/100)  /*для наглядности*/
+        let topPadMinThrePer = 0;
+        square.style.top = topPadMinThrePer+'px';
+        square.style.left = Math.random()*innerWidth+'px';
+        
+        const bg = 'rgba(255,255,255,0)'
+        /*const bg = colorss[Math.floor(Math.random()*colorss.length)];*/
+        square.style.background = bg;
+        
+        section.appendChild(square);
+        
+        setTimeout(()=>{
+        square.remove()
+        }, 5000);
+        }
+    
+    twott.oninput = zizibox;
+    onett.oninput = zizibox;

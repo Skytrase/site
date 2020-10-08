@@ -298,36 +298,15 @@ color: #fff;
     left: 10%;
     top: -20px;
     border: 2px solid black;
-    animation: kribut 1s linear infinite;
+    animation: ret  1s linear infinite;
     transition: 0.2s;
+    overflow: hidden;
 }
 .rot{
     left: 90%;
     background: linear-gradient( #b3ff00 , #c8ff00);
 }
-@keyframes kribut{
-    0%{
-        border: 2px solid black;
-        filter: hue-rotate(-10deg);
-        box-shadow: 1px -1px 1px 1px #010005;
-    }
-    25%{
-        box-shadow: -1px -1px 1px 1px #1100ad;
-    }
-    50%{
-        border: 1px solid black;
-        filter: hue-rotate(50deg);
-        box-shadow: -1px 1px 1px 1px #110070;
-    }
-    75%{
-        box-shadow: 1px 1px 1px 1px #1100ad;
-    }
-    100%{
-        border: 2px solid black;
-        filter: hue-rotate(-10deg);
-        box-shadow: 1px -1px 1px 1px #000000;
-    }
-}
+
 .plusTrista{
     height: 350px;
 }
@@ -360,9 +339,16 @@ color: #fff;
     display:flex;
     justify-content:center;
 }
+
+.butttf:hover{
+    animation: ret 1s linear infinite;
+    transition: 0.1s;
+    transform: rotate(2500deg);
+}
 .butttf:active{
     animation: ret 1s linear infinite;
-    transition: 1s;
+    transition: 3s;
+    transform: rotate(4500deg);
 }
 @keyframes ret{
     0%{
@@ -794,21 +780,55 @@ color: #fff;
         }
 
         .cont{
+            overflow: hidden;
             position: absolute;
             z-index: 9989;
             width: 100%;
             height: 100%;
-            background: rgba(87, 0, 168, 0.945);
-            animation: ioio 15s linear infinite;
+            background:linear-gradient( 100deg, #ffe600 ,#ff3c00);
+            animation: ioio 10s linear infinite;
         }
 @keyframes ioio{
     0%,100%{
         filter: hue-rotate(0deg);
+        opacity: 0.97;
     }
     50%{
-        filter: hue-rotate(360deg);
+        filter: hue-rotate(-60deg);
+        opacity: 1;
     }
 }
+.cont2{
+    position: fixed;
+    width: 100%;
+}
+.sp{
+    font-size: 140px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    pointer-events: none;
+    animation: anim 7s linear infinite;
+    background:  rgba(0,0,0,.8);
+    text-align: center;
+    }
+    @keyframes anim{
+    0%{
+    transform: scale(0) translateY(0) rotate(0deg);
+    opacity: 0;
+    filter: hue-rotate(0deg);
+    }
+    10%{
+    opacity: 1;
+    }
+    90%{
+    opacity: 1;
+    }
+    100%{
+    transform: scale(1) translateY(2900%) rotate(160deg);
+    opacity: 0;
+    filter: hue-rotate(360deg);
+    }
+    }
         .contin{
             position: fixed; 
             width: 300px;
