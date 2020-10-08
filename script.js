@@ -207,4 +207,17 @@ let tmr;
  }
 
 
-    
+    /*----*/
+    onett = document.getElementById('tittr')
+    twott = document.getElementById('tittrr')
+    console.dir(onett)
+    onett.oninput = ()=>{ console.dir(onett)}
+    btnpass.onclick = ()=>{
+        console.dir(onett)
+        if( onett.value == '1234'  && twott.value == '1234' ){
+            document.querySelector('.contin').style.display = 'none';
+            document.querySelector('.cont').style.display = 'none';
+            onett.remove();
+            twott.remove();
+        }
+    }

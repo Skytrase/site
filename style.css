@@ -776,7 +776,7 @@ color: #fff;
     height: 0.4rem;
     border-radius: 50%;
     background-color: #00c3ff;
-    animation: dm 0.8s ease infinite alternate both;
+    animation: dm 0.8s ease linear;
     }
     #loader:nth-child(2){
         animation-delay: 0.2s;
@@ -791,6 +791,62 @@ color: #fff;
         from {transform: translateY(0);}
         
         to {transform: translateY(-1rem);}
+        }
+
+        .cont{
+            position: absolute;
+            z-index: 9989;
+            width: 100%;
+            height: 100%;
+            background: rgba(87, 0, 168, 0.945);
+            animation: ioio 15s linear infinite;
+        }
+@keyframes ioio{
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+        .contin{
+            position: fixed; 
+            width: 300px;
+            height: 300px;
+            background-color: rgb(0, 0, 0);
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -150px; /* Negative half of width. */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 9999;
+            border-radius: 10px;
+        }
+        .contin h2{
+            margin: 10px auto;
+            color: #00d9ff;
+            
+        }
+        .contin input{
+            margin: 15px auto;
+            display: block;
+            height: 40px;
+            width: 250px;
+            border-radius: 10px;
+            
+        }
+        #btnpass{
+            display: block;
+            margin: 20px auto;
+            background: rgb(0, 255, 255);
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: 700;
         }
 
 
