@@ -64,7 +64,12 @@ function bslider(){
 butLeft.onclick = bslider;
 butRigth.onclick = slider;
 butClose.onclick = () =>{
-    document.querySelector('.slider').style.display = 'none';
+    document.querySelector('.slider').classList.add('opacityanim')
+    setTimeout(()=>{
+        document.querySelector('.slider').style.display = 'none';
+    document.querySelector('.slider').classList.toggle('opacityanim')
+    },500)
+    
 }
  document.querySelector('.onc').onclick = () =>{
     document.querySelector('.slider').style.display = 'flex';
@@ -201,24 +206,31 @@ let tmr;
     let x = e.offsetX;
     let y = e.offsetY;
     ctx.arc(x , y, radius, startAngle, endAngle, anticlockwise);
-    ctx.strokeStyle =  " #15005fcc"
+    ctx.strokeStyle =  " #15005fcc";
     ctx.stroke();
     ctx.fill();
     console.log(e)
     
  }
+ /*----*/
+    function udalyetcya(){
+        document.querySelector('.contin').style.display = 'none';
+        document.querySelector('.cont').style.display = 'none';
+        onett.remove();
+        twott.remove();
+    }
+   
+    onett = document.getElementById('tittr');
+    twott = document.getElementById('tittrr');
+    console.dir(onett);
 
-
-    /*----*/
-    onett = document.getElementById('tittr')
-    twott = document.getElementById('tittrr')
-    console.dir(onett)
     btnpass.onclick = ()=>{
+        
         if( onett.value == a  && twott.value == b ){
-            document.querySelector('.contin').style.display = 'none';
-            document.querySelector('.cont').style.display = 'none';
-            onett.remove();
-            twott.remove();
+            document.querySelector('.cont').classList.add('welconeCircle')
+            document.querySelector('.contin').classList.add('welconeCircle')
+            
+            setTimeout(udalyetcya,2000);
         }
     }
     function zizibox(){
@@ -252,6 +264,44 @@ let tmr;
         square.remove()
         }, 5000);
         }
+        
+        function zizibox2(){
     
+            const colorss = ['#7B68EE','#7FFFD4','#FFA07A','#FF1493','#FFFF00','#FF0000'];
+            const section = document.querySelector('.cont');
+            const square = document.createElement('span');
+            square.classList.add('sp');
+            let lastsya = document.getElementById('tittr').value;
+            console.log(lastsya.slice(-1)); 
+            square.innerHTML = lastsya.slice(-1);
+            let size = Math.random()*50;
+            let randnom = Math.random();
+            square.style.width =  240+size+'px';
+            square.style.height = 240+size+'px';
+            square.style.fontSize = 240+size+'px';
+            
+            if(onett.value == 7777){
+                document.querySelector('.cont').classList.add('welconeCircle')
+            document.querySelector('.contin').classList.add('welconeCircle')
+            
+            setTimeout(udalyetcya,2000);
+            }
+            /*let toppadding = Math.floor((((innerHeight/3)*2)+randnom*(innerHeight/3)));*/
+            let toppadding = 0;
+           /* let topPadMinThrePer = toppadding - (toppadding*30/100)  /*для наглядности*/
+            let topPadMinThrePer = 0;
+            square.style.top = topPadMinThrePer+'px';
+            square.style.left = Math.random()*innerWidth+'px';
+            
+            const bg = 'rgba(255,255,255,0)'
+            /*const bg = colorss[Math.floor(Math.random()*colorss.length)];*/
+            square.style.background = bg;
+            
+            section.appendChild(square);
+            
+            setTimeout(()=>{
+            square.remove()
+            }, 5000);
+            }
     twott.oninput = zizibox;
-    onett.oninput = zizibox;
+    onett.oninput = zizibox2;
