@@ -79,22 +79,22 @@ filter: blur(10px);
 .banner h2 span{
     font-weight: 700;
     font-size: 1.5em;
-    animation-duration: 3s;
-    animation-name: slidein;
+    animation: slidein 10s linear infinite;
     position: relative;
     transition: 1s;
 }
 @keyframes slidein{
-    0%{
-        color: rgb(41, 230, 255);
-        hue-rotate: 20deg;
+    0%,100%{
+        color: rgb(255, 255, 255); 
     }
-    50%{
-        hue-rotate: 360deg;
+    65%{
+        color: rgb(255, 255, 255);
+    }
+    75%{
         color: rgb(187, 255, 0);
     }
-    100%{
-        color: rgb(255, 255, 255);
+    85%{
+        color: rgb(41, 230, 255);  
     }
 }
 
@@ -135,7 +135,7 @@ header{
 }
 header.sticky{
     padding: 20px 100px;
-    background: rgba(255, 255, 255, 0.89);
+    background: rgb(255, 255, 255);
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 header.sticky .logo{
@@ -474,6 +474,7 @@ color: #fff;
     cursor:  url(img/cursor300.png), pointer ;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: white;
 }
 .formBx form input[type="submit"]:hover{
     background: #06cdff;
@@ -941,7 +942,7 @@ color: #fff;
             height: 40px;
             width: 250px;
             border-radius: 10px;
-            
+            outline:none;
         }
         #btnpass{
             display: block;
@@ -955,8 +956,8 @@ color: #fff;
             font-weight: 700;
         }
         .welconeCircle{
-            animation: welc 2s;
-            transition: 2s;
+            animation: welc 1s;
+            transition: 1s;
         }
         @keyframes welc{
             0%{
@@ -966,4 +967,9 @@ color: #fff;
                 filter: invert(1);
                 opacity: 0;
             }
+        }
+        #nart{
+            display:block;
+            width: 100%;
+            height: 100vh;
         }
