@@ -14,16 +14,16 @@
 }
 @keyframes poyy{
     0%,100%{
-        background: url(/ris1.jpg);
+        background: url(../indx/ris1.jpg);
     }
     25%{
-        background: url(/ris2.jpg);
+        background: url(../indx/ris2.jpg);
     }
     50%{
-        background: url(/ris3.jpg);
+        background: url(../indx/ris3.jpg);
     }
     75%{
-        background: url(/ris4.jpg);
+        background: url(../indx/ris4.jpg);
     }
 }
 h2 {
