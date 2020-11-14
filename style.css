@@ -972,11 +972,11 @@ color: #fff;
             color: rgb(0, 174, 255);
             background-color: black;
             height: 30px;
-            padding:5px;
+            padding:4px;
             text-decoration: none;
             text-transform: uppercase;
             display: block;
-            font-size: 10px;
+            font-size: 8px;
         }
         .re{
             padding: 10px;
